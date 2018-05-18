@@ -63,6 +63,7 @@ class TissueData(data.Dataset):
             d = os.path.join(dir, target)
             if not os.path.isdir(d):
                 continue
+            print('Loading from:', target)
 
             for root, _, fnames in os.walk(d):
                 for fname in fnames:

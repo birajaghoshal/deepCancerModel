@@ -1,0 +1,100 @@
+Namespace(augment=False, batchSize=32, beta1=0.5, cuda=True, data='lung', decay_lr=False, dropout=0.5, earlystop=False, experiment='sb41', imgSize=299, init='normal', lr=0.001, metadata=False, method='average', model='', nc=3, ngpu=1, niter=25, nonlinearity='relu', optimizer='Adam')
+
+old comet version (0.1.68) detected. current: 1.0.10 please update your comet lib with command: `pip install --no-cache-dir --upgrade comet_ml`
+
+Experiment is live on comet.ml https://www.comet.ml/charrrrtreuse/general/e9d520824797409690b01d0ea7d3a09b
+
+Random Seed:  6864
+Loading from: TCGA-LUAD
+Loading from: TCGA-LUSC
+Loading from: Solid_Tissue_Normal
+Finished loading train dataset: 461823 samples
+Loading from: TCGA-LUAD
+Loading from: TCGA-LUSC
+Loading from: Solid_Tissue_Normal
+Finished loading valid dataset: 105872 samples
+Class encoding:
+{'Solid_Tissue_Normal': 0, 'TCGA-LUAD': 1, 'TCGA-LUSC': 2}
+cancer_CNN (
+  (conv1): BasicConv2d (
+    (conv): Conv2d(3, 16, kernel_size=(5, 5), stride=(2, 2), padding=(1, 1))
+    (bn): BatchNorm2d(16, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv2): BasicConv2d (
+    (conv): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1))
+    (bn): BatchNorm2d(32, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv3): BasicConv2d (
+    (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv4): BasicConv2d (
+    (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv5): BasicConv2d (
+    (conv): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv6): BasicConv2d (
+    (conv): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (linear): Linear (5184 -> 3)
+)
+No early stopping implemented
+Starting training
+predicted
+Variable containing:
+ 1
+ 1
+ 0
+ 0
+ 0
+ 2
+ 0
+ 1
+ 0
+ 1
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2
+ 0
+ 0
+ 0
+ 1
+ 0
+ 1
+ 0
+ 2
+ 0
+ 0
+ 0
+ 2
+ 0
+ 0
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+total:
+32
+
+Uploading stats to Comet before program termination (may take several seconds)
+
+Experiment is live on comet.ml: https://www.comet.ml/charrrrtreuse/general/e9d520824797409690b01d0ea7d3a09b

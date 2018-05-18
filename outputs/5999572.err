@@ -1,0 +1,5 @@
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+mkdir: cannot create directory ‘experiments’: File exists
+socket is already closed.
+slurmstepd: error: *** JOB 5999572 ON gpu-26 CANCELLED AT 2018-05-04T15:02:22 ***

@@ -1,0 +1,4498 @@
+Namespace(augment=False, batchSize=32, beta1=0.5, cuda=True, data='lung', decay_lr=False, dropout=0.5, earlystop=False, experiment='sb40', imgSize=299, init='normal', lr=0.001, metadata=False, method='average', model='', nc=3, ngpu=1, niter=25, nonlinearity='relu', optimizer='Adam')
+
+old comet version (0.1.68) detected. current: 1.0.10 please update your comet lib with command: `pip install --no-cache-dir --upgrade comet_ml`
+
+Experiment is live on comet.ml https://www.comet.ml/charrrrtreuse/general/69a250aa8d80497aaf4b98f3660d2c66
+
+Random Seed:  8555
+Loading from: TCGA-LUAD
+Loading from: TCGA-LUSC
+Loading from: Solid_Tissue_Normal
+Finished loading train dataset: 461823 samples
+Loading from: TCGA-LUAD
+Loading from: TCGA-LUSC
+Loading from: Solid_Tissue_Normal
+Finished loading valid dataset: 105872 samples
+Class encoding:
+{'TCGA-LUAD': 1, 'Solid_Tissue_Normal': 0, 'TCGA-LUSC': 2}
+cancer_CNN (
+  (conv1): BasicConv2d (
+    (conv): Conv2d(3, 16, kernel_size=(5, 5), stride=(2, 2), padding=(1, 1))
+    (bn): BatchNorm2d(16, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv2): BasicConv2d (
+    (conv): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1))
+    (bn): BatchNorm2d(32, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv3): BasicConv2d (
+    (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv4): BasicConv2d (
+    (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv5): BasicConv2d (
+    (conv): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (conv6): BasicConv2d (
+    (conv): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True)
+    (relu): ReLU ()
+    (dropout): Dropout (p = 0.5)
+  )
+  (linear): Linear (5184 -> 3)
+)
+No early stopping implemented
+Starting training
+Variable containing:
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 1
+ 1
+ 1
+ 0
+ 1
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+32
+[0/25][1/14432] Training Loss: 1.090586 
+Variable containing:
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 1
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+64
+[0/25][2/14432] Training Loss: 1.106106 
+Variable containing:
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+96
+[0/25][3/14432] Training Loss: 1.146616 
+Variable containing:
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 0
+ 0
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 0
+ 0
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+128
+[0/25][4/14432] Training Loss: 1.082406 
+Variable containing:
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 1
+ 0
+ 2
+ 2
+ 0
+ 2
+ 2
+ 0
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+160
+[0/25][5/14432] Training Loss: 1.104910 
+Variable containing:
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+192
+[0/25][6/14432] Training Loss: 1.173116 
+Variable containing:
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+224
+[0/25][7/14432] Training Loss: 1.058267 
+Variable containing:
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+256
+[0/25][8/14432] Training Loss: 1.090266 
+Variable containing:
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 1
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+288
+[0/25][9/14432] Training Loss: 1.277183 
+Variable containing:
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 0
+ 0
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+320
+[0/25][10/14432] Training Loss: 1.018337 
+Variable containing:
+ 1
+ 1
+ 0
+ 0
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 0
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 0
+ 0
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+352
+[0/25][11/14432] Training Loss: 1.115464 
+Variable containing:
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 0
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 0
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+384
+[0/25][12/14432] Training Loss: 1.072130 
+Variable containing:
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 0
+ 1
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+416
+[0/25][13/14432] Training Loss: 1.114490 
+Variable containing:
+ 2
+ 0
+ 0
+ 1
+ 1
+ 2
+ 2
+ 1
+ 0
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+448
+[0/25][14/14432] Training Loss: 1.166282 
+Variable containing:
+ 0
+ 2
+ 1
+ 2
+ 1
+ 1
+ 0
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+480
+[0/25][15/14432] Training Loss: 1.098175 
+Variable containing:
+ 2
+ 0
+ 1
+ 0
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+512
+[0/25][16/14432] Training Loss: 1.066436 
+Variable containing:
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+544
+[0/25][17/14432] Training Loss: 1.083292 
+Variable containing:
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 0
+ 0
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+576
+[0/25][18/14432] Training Loss: 1.062050 
+Variable containing:
+ 1
+ 0
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+608
+[0/25][19/14432] Training Loss: 1.052682 
+Variable containing:
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+640
+[0/25][20/14432] Training Loss: 1.010530 
+Variable containing:
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 0
+ 1
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 0
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+672
+[0/25][21/14432] Training Loss: 1.127817 
+Variable containing:
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 2
+ 1
+ 0
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+704
+[0/25][22/14432] Training Loss: 1.014825 
+Variable containing:
+ 2
+ 1
+ 2
+ 2
+ 1
+ 0
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+736
+[0/25][23/14432] Training Loss: 0.929541 
+Variable containing:
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 0
+ 1
+ 0
+ 0
+ 2
+ 2
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+768
+[0/25][24/14432] Training Loss: 1.233410 
+Variable containing:
+ 2
+ 1
+ 0
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 0
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+800
+[0/25][25/14432] Training Loss: 1.020820 
+Variable containing:
+ 0
+ 1
+ 2
+ 0
+ 2
+ 0
+ 2
+ 2
+ 1
+ 1
+ 0
+ 0
+ 2
+ 2
+ 2
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+832
+[0/25][26/14432] Training Loss: 1.025702 
+Variable containing:
+ 2
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+864
+[0/25][27/14432] Training Loss: 0.939885 
+Variable containing:
+ 1
+ 0
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 0
+ 1
+ 1
+ 1
+ 0
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 2
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+896
+[0/25][28/14432] Training Loss: 1.131290 
+Variable containing:
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 0
+ 0
+ 0
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 0
+ 2
+ 0
+ 1
+ 2
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+928
+[0/25][29/14432] Training Loss: 1.048775 
+Variable containing:
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 0
+ 1
+ 1
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 0
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+960
+[0/25][30/14432] Training Loss: 1.057860 
+Variable containing:
+ 2
+ 2
+ 1
+ 2
+ 1
+ 0
+ 1
+ 1
+ 2
+ 0
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 0
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+992
+[0/25][31/14432] Training Loss: 0.966901 
+Variable containing:
+ 2
+ 0
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1024
+[0/25][32/14432] Training Loss: 0.957377 
+Variable containing:
+ 2
+ 2
+ 2
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1056
+[0/25][33/14432] Training Loss: 1.001690 
+Variable containing:
+ 2
+ 0
+ 1
+ 1
+ 1
+ 0
+ 1
+ 0
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 0
+ 1
+ 0
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1088
+[0/25][34/14432] Training Loss: 1.097404 
+Variable containing:
+ 1
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 0
+ 0
+ 1
+ 1
+ 0
+ 1
+ 2
+ 0
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1120
+[0/25][35/14432] Training Loss: 1.088603 
+Variable containing:
+ 0
+ 2
+ 2
+ 0
+ 1
+ 0
+ 1
+ 0
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1152
+[0/25][36/14432] Training Loss: 1.147645 
+Variable containing:
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+ 0
+ 2
+ 0
+ 1
+ 0
+ 1
+ 2
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 0
+ 2
+ 0
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1184
+[0/25][37/14432] Training Loss: 1.150613 
+Variable containing:
+ 0
+ 2
+ 2
+ 0
+ 0
+ 0
+ 1
+ 1
+ 0
+ 1
+ 2
+ 2
+ 1
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1216
+[0/25][38/14432] Training Loss: 1.063650 
+Variable containing:
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1248
+[0/25][39/14432] Training Loss: 1.037873 
+Variable containing:
+ 2
+ 0
+ 0
+ 1
+ 0
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 0
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 0
+ 1
+ 0
+ 2
+ 1
+ 1
+ 1
+ 2
+ 0
+ 0
+ 1
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1280
+[0/25][40/14432] Training Loss: 1.107089 
+Variable containing:
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1312
+[0/25][41/14432] Training Loss: 0.965894 
+Variable containing:
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 0
+ 0
+ 1
+ 1
+ 2
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 0
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1344
+[0/25][42/14432] Training Loss: 1.106011 
+Variable containing:
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 0
+ 0
+ 1
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1376
+[0/25][43/14432] Training Loss: 1.024946 
+Variable containing:
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 0
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 2
+ 0
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 0
+ 0
+ 1
+ 2
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1408
+[0/25][44/14432] Training Loss: 1.119060 
+Variable containing:
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+ 2
+ 2
+ 0
+ 0
+ 2
+ 0
+ 0
+ 0
+ 1
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1440
+[0/25][45/14432] Training Loss: 1.063093 
+Variable containing:
+ 1
+ 0
+ 1
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 0
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 0
+ 1
+ 0
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1472
+[0/25][46/14432] Training Loss: 1.072632 
+Variable containing:
+ 0
+ 1
+ 2
+ 1
+ 2
+ 0
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 0
+ 1
+ 0
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1504
+[0/25][47/14432] Training Loss: 1.096802 
+Variable containing:
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 0
+ 0
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+ 0
+ 0
+ 0
+ 1
+ 2
+ 2
+ 2
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1536
+[0/25][48/14432] Training Loss: 1.141914 
+Variable containing:
+ 1
+ 0
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 0
+ 2
+ 1
+ 1
+ 0
+ 1
+ 0
+ 2
+ 2
+ 0
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1568
+[0/25][49/14432] Training Loss: 1.015752 
+Variable containing:
+ 0
+ 1
+ 1
+ 2
+ 1
+ 0
+ 1
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 0
+ 2
+ 2
+ 0
+ 2
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1600
+[0/25][50/14432] Training Loss: 1.129044 
+Variable containing:
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1632
+[0/25][51/14432] Training Loss: 1.005157 
+Variable containing:
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 0
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1664
+[0/25][52/14432] Training Loss: 0.998800 
+Variable containing:
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 0
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+ 0
+ 0
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1696
+[0/25][53/14432] Training Loss: 1.050860 
+Variable containing:
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1728
+[0/25][54/14432] Training Loss: 1.072145 
+Variable containing:
+ 1
+ 1
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 0
+ 0
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1760
+[0/25][55/14432] Training Loss: 1.073267 
+Variable containing:
+ 1
+ 1
+ 0
+ 0
+ 1
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 0
+ 0
+ 2
+ 1
+ 1
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1792
+[0/25][56/14432] Training Loss: 1.138574 
+Variable containing:
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 0
+ 1
+ 1
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1824
+[0/25][57/14432] Training Loss: 1.023353 
+Variable containing:
+ 2
+ 1
+ 2
+ 0
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 0
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 0
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1856
+[0/25][58/14432] Training Loss: 1.022400 
+Variable containing:
+ 2
+ 2
+ 0
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 0
+ 1
+ 1
+ 0
+ 1
+ 2
+ 0
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1888
+[0/25][59/14432] Training Loss: 1.066717 
+Variable containing:
+ 1
+ 1
+ 1
+ 1
+ 0
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1920
+[0/25][60/14432] Training Loss: 1.012746 
+Variable containing:
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1952
+[0/25][61/14432] Training Loss: 0.996061 
+Variable containing:
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 0
+ 0
+ 0
+ 0
+ 1
+ 0
+ 0
+ 2
+ 2
+ 2
+ 2
+ 0
+ 0
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+1984
+[0/25][62/14432] Training Loss: 1.082159 
+Variable containing:
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2016
+[0/25][63/14432] Training Loss: 0.933848 
+Variable containing:
+ 2
+ 1
+ 0
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 0
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2048
+[0/25][64/14432] Training Loss: 1.045890 
+Variable containing:
+ 2
+ 2
+ 2
+ 2
+ 0
+ 0
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2080
+[0/25][65/14432] Training Loss: 1.056797 
+Variable containing:
+ 1
+ 2
+ 0
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 0
+ 2
+ 1
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2112
+[0/25][66/14432] Training Loss: 1.020614 
+Variable containing:
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 0
+ 2
+ 2
+ 0
+ 2
+ 1
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2144
+[0/25][67/14432] Training Loss: 0.993184 
+Variable containing:
+ 2
+ 1
+ 0
+ 2
+ 0
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+ 1
+ 0
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2176
+[0/25][68/14432] Training Loss: 1.056670 
+Variable containing:
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2208
+[0/25][69/14432] Training Loss: 0.969562 
+Variable containing:
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 0
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 0
+ 0
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2240
+[0/25][70/14432] Training Loss: 1.032231 
+Variable containing:
+ 2
+ 0
+ 1
+ 2
+ 0
+ 0
+ 2
+ 2
+ 0
+ 1
+ 1
+ 0
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2272
+[0/25][71/14432] Training Loss: 1.193758 
+Variable containing:
+ 2
+ 2
+ 0
+ 1
+ 0
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2304
+[0/25][72/14432] Training Loss: 0.880462 
+Variable containing:
+ 0
+ 1
+ 0
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 0
+ 2
+ 0
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2336
+[0/25][73/14432] Training Loss: 0.995929 
+Variable containing:
+ 0
+ 1
+ 0
+ 1
+ 0
+ 2
+ 2
+ 0
+ 2
+ 1
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 0
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2368
+[0/25][74/14432] Training Loss: 1.102909 
+Variable containing:
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 1
+ 2
+ 0
+ 0
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2400
+[0/25][75/14432] Training Loss: 1.012878 
+Variable containing:
+ 0
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 0
+ 1
+ 0
+ 2
+ 0
+ 1
+ 1
+ 2
+ 2
+ 0
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2432
+[0/25][76/14432] Training Loss: 1.118646 
+Variable containing:
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 1
+ 0
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2464
+[0/25][77/14432] Training Loss: 1.030485 
+Variable containing:
+ 2
+ 2
+ 0
+ 1
+ 2
+ 0
+ 1
+ 0
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2496
+[0/25][78/14432] Training Loss: 1.007526 
+Variable containing:
+ 2
+ 1
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 0
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2528
+[0/25][79/14432] Training Loss: 0.998272 
+Variable containing:
+ 0
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 0
+ 2
+ 2
+ 1
+ 1
+ 0
+ 2
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2560
+[0/25][80/14432] Training Loss: 1.081358 
+Variable containing:
+ 2
+ 0
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 0
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2592
+[0/25][81/14432] Training Loss: 1.012121 
+Variable containing:
+ 0
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2624
+[0/25][82/14432] Training Loss: 1.052975 
+Variable containing:
+ 2
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 0
+ 0
+ 2
+ 1
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2656
+[0/25][83/14432] Training Loss: 1.066717 
+Variable containing:
+ 0
+ 2
+ 0
+ 2
+ 2
+ 0
+ 2
+ 0
+ 0
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2688
+[0/25][84/14432] Training Loss: 1.196005 
+Variable containing:
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 0
+ 2
+ 1
+ 1
+ 2
+ 0
+ 2
+ 1
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2720
+[0/25][85/14432] Training Loss: 1.056498 
+Variable containing:
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 0
+ 0
+ 2
+ 2
+ 0
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2752
+[0/25][86/14432] Training Loss: 1.024233 
+Variable containing:
+ 0
+ 2
+ 0
+ 0
+ 2
+ 1
+ 2
+ 1
+ 0
+ 0
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 0
+ 0
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2784
+[0/25][87/14432] Training Loss: 1.141337 
+Variable containing:
+ 0
+ 0
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2816
+[0/25][88/14432] Training Loss: 1.054146 
+Variable containing:
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2848
+[0/25][89/14432] Training Loss: 0.934803 
+Variable containing:
+ 0
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+ 1
+ 1
+ 2
+ 0
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2880
+[0/25][90/14432] Training Loss: 0.981607 
+Variable containing:
+ 1
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 1
+ 0
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 0
+ 0
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2912
+[0/25][91/14432] Training Loss: 1.167900 
+Variable containing:
+ 0
+ 0
+ 1
+ 0
+ 1
+ 2
+ 1
+ 1
+ 1
+ 0
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 0
+ 2
+ 0
+ 1
+ 0
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2944
+[0/25][92/14432] Training Loss: 1.115453 
+Variable containing:
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 0
+ 2
+ 0
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 0
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+2976
+[0/25][93/14432] Training Loss: 1.080494 
+Variable containing:
+ 1
+ 1
+ 1
+ 0
+ 0
+ 2
+ 1
+ 2
+ 0
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 2
+ 2
+ 2
+ 0
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3008
+[0/25][94/14432] Training Loss: 1.082762 
+Variable containing:
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 0
+ 2
+ 0
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3040
+[0/25][95/14432] Training Loss: 0.980356 
+Variable containing:
+ 1
+ 2
+ 1
+ 1
+ 0
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 0
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3072
+[0/25][96/14432] Training Loss: 1.075566 
+Variable containing:
+ 0
+ 2
+ 2
+ 2
+ 0
+ 2
+ 1
+ 1
+ 2
+ 0
+ 1
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3104
+[0/25][97/14432] Training Loss: 1.136640 
+Variable containing:
+ 1
+ 0
+ 1
+ 1
+ 2
+ 1
+ 1
+ 0
+ 2
+ 0
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 1
+ 0
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3136
+[0/25][98/14432] Training Loss: 1.046677 
+Variable containing:
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 0
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 0
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3168
+[0/25][99/14432] Training Loss: 0.990687 
+Variable containing:
+ 2
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3200
+[0/25][100/14432] Training Loss: 0.924577 
+Variable containing:
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 0
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 0
+ 1
+ 0
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3232
+[0/25][101/14432] Training Loss: 1.133348 
+Variable containing:
+ 1
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3264
+[0/25][102/14432] Training Loss: 0.968623 
+Variable containing:
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 0
+ 2
+ 2
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3296
+[0/25][103/14432] Training Loss: 0.984234 
+Variable containing:
+ 1
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 0
+ 0
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3328
+[0/25][104/14432] Training Loss: 1.016967 
+Variable containing:
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3360
+[0/25][105/14432] Training Loss: 0.990776 
+Variable containing:
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 0
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3392
+[0/25][106/14432] Training Loss: 1.020520 
+Variable containing:
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 1
+ 0
+ 0
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 1
+ 1
+ 0
+ 1
+ 1
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3424
+[0/25][107/14432] Training Loss: 0.996493 
+Variable containing:
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3456
+[0/25][108/14432] Training Loss: 0.884624 
+Variable containing:
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 1
+ 0
+ 1
+ 0
+ 2
+ 1
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3488
+[0/25][109/14432] Training Loss: 0.959135 
+Variable containing:
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3520
+[0/25][110/14432] Training Loss: 0.946659 
+Variable containing:
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 0
+ 1
+ 0
+ 0
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 1
+ 1
+ 1
+ 2
+ 0
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3552
+[0/25][111/14432] Training Loss: 1.174111 
+Variable containing:
+ 1
+ 2
+ 2
+ 2
+ 1
+ 0
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 0
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+ 0
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3584
+[0/25][112/14432] Training Loss: 0.953987 
+Variable containing:
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 2
+ 1
+ 0
+ 1
+ 1
+ 1
+ 2
+ 0
+ 1
+ 2
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 1
+ 1
+ 0
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3616
+[0/25][113/14432] Training Loss: 0.979936 
+Variable containing:
+ 2
+ 2
+ 0
+ 1
+ 1
+ 2
+ 0
+ 0
+ 2
+ 2
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+ 2
+ 0
+ 0
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3648
+[0/25][114/14432] Training Loss: 1.069721 
+Variable containing:
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 2
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 1
+ 2
+ 1
+ 1
+ 1
+ 0
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3680
+[0/25][115/14432] Training Loss: 0.882190 
+Variable containing:
+ 1
+ 1
+ 0
+ 0
+ 1
+ 0
+ 1
+ 2
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+ 0
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 1
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3712
+[0/25][116/14432] Training Loss: 1.104033 
+Variable containing:
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 0
+ 1
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3744
+[0/25][117/14432] Training Loss: 1.137872 
+Variable containing:
+ 2
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 2
+ 2
+ 1
+ 2
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 2
+ 2
+ 0
+ 1
+ 2
+ 2
+ 1
+ 1
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3776
+[0/25][118/14432] Training Loss: 0.933012 
+Variable containing:
+ 2
+ 1
+ 0
+ 0
+ 1
+ 2
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 2
+ 0
+ 2
+ 1
+ 2
+ 1
+ 1
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 1
+ 0
+ 2
+ 2
+ 2
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3808
+[0/25][119/14432] Training Loss: 1.004502 
+Variable containing:
+ 1
+ 1
+ 1
+ 1
+ 1
+ 2
+ 0
+ 2
+ 2
+ 2
+ 1
+ 1
+ 0
+ 1
+ 1
+ 1
+ 1
+ 2
+ 2
+ 1
+ 2
+ 1
+ 2
+ 1
+ 0
+ 1
+ 2
+ 1
+ 2
+ 1
+ 1
+ 1
+[torch.cuda.LongTensor of size 32 (GPU 0)]
+
+3840
+[0/25][120/14432] Training Loss: 1.078693 

@@ -1,0 +1,9 @@
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Traceback (most recent call last):
+  File "train.py", line 20, in <module>
+    from utils.auc import *
+  File "/scratch/jmw784/capstone/deep-cancer/utils/auc.py", line 54
+    for i in classes:
+                    ^
+TabError: inconsistent use of tabs and spaces in indentation

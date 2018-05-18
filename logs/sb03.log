@@ -1,0 +1,9 @@
+Namespace(augment=True, batchSize=32, beta1=0.5, cuda=True, data='lung', decay_lr=False, dropout=0.1, earlystop=True, experiment='sb03', imgSize=299, init="'xavier'", lr=0.001, metadata=False, method='average', model='', nc=3, ngpu=1, niter=25, nonlinearity='relu', optimizer='Adam')
+
+old comet version (0.1.68) detected. current: 1.0.13 please update your comet lib with command: `pip install --no-cache-dir --upgrade comet_ml`
+
+Experiment is live on comet.ml https://www.comet.ml/sedab/general/30b552c8f0784deab63530ad3dd4daaa
+
+Random Seed:  3454
+Loading from: TCGA-LUAD
+Loading from: TCGA-LUSC

@@ -1,0 +1,8 @@
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Traceback (most recent call last):
+  File "train.py", line 446, in <module>
+    val_predictions, val_labels, classes = range(num_classes))
+  File "/scratch/jmw784/capstone/deep-cancer/utils/auc.py", line 113, in get_auc
+    fpr[i], tpr[i], _ = roc_curve(labels[:, i], predictions[:, i])
+NameError: name 'predictions' is not defined

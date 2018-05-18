@@ -1,0 +1,22 @@
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+mkdir: cannot create directory ‘experiments’: File exists
+THCudaCheck FAIL file=/pytorch/torch/lib/THC/generic/THCStorage.cu line=66 error=2 : out of memory
+Traceback (most recent call last):
+  File "train.py", line 420, in <module>
+    train_loss = criterion(model(input_img), target_label)
+  File "/share/apps/pytorch/0.2.0_3/python3.5/lib/python3.5/site-packages/torch/nn/modules/module.py", line 224, in __call__
+    result = self.forward(*input, **kwargs)
+  File "train.py", line 201, in forward
+    x = self.conv3(x)
+  File "/share/apps/pytorch/0.2.0_3/python3.5/lib/python3.5/site-packages/torch/nn/modules/module.py", line 224, in __call__
+    result = self.forward(*input, **kwargs)
+  File "train.py", line 172, in forward
+    x = self.conv(x)
+  File "/share/apps/pytorch/0.2.0_3/python3.5/lib/python3.5/site-packages/torch/nn/modules/module.py", line 224, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/share/apps/pytorch/0.2.0_3/python3.5/lib/python3.5/site-packages/torch/nn/modules/conv.py", line 254, in forward
+    self.padding, self.dilation, self.groups)
+  File "/share/apps/pytorch/0.2.0_3/python3.5/lib/python3.5/site-packages/torch/nn/functional.py", line 52, in conv2d
+    return f(input, weight, bias)
+RuntimeError: cuda runtime error (2) : out of memory at /pytorch/torch/lib/THC/generic/THCStorage.cu:66

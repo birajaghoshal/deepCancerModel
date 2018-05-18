@@ -1,0 +1,7 @@
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+mkdir: cannot create directory ‘experiments’: File exists
+[Errno 104] Connection reset by peer
+socket is already closed.
+socket is already closed.
+slurmstepd: error: *** JOB 5939869 ON gpu-23 CANCELLED AT 2018-04-30T16:38:53 ***

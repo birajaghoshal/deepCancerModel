@@ -1,0 +1,13 @@
+Requirement already satisfied: comet_ml in /home/sb3923/.local/lib/python3.5/site-packages
+Requirement already satisfied: six in /share/apps/python3/3.5.3/intel/lib/python3.5/site-packages/six-1.10.0-py3.5.egg (from comet_ml)
+Requirement already satisfied: requests>=2.18.4 in /home/sb3923/.local/lib/python3.5/site-packages (from comet_ml)
+Requirement already satisfied: websocket-client>=0.44.0 in /home/sb3923/.local/lib/python3.5/site-packages (from comet_ml)
+Requirement already satisfied: wurlitzer>=1.0.1 in /home/sb3923/.local/lib/python3.5/site-packages (from comet_ml)
+Requirement already satisfied: urllib3<1.23,>=1.21.1 in /home/sb3923/.local/lib/python3.5/site-packages (from requests>=2.18.4->comet_ml)
+Requirement already satisfied: certifi>=2017.4.17 in /home/sb3923/.local/lib/python3.5/site-packages (from requests>=2.18.4->comet_ml)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /home/sb3923/.local/lib/python3.5/site-packages (from requests>=2.18.4->comet_ml)
+Requirement already satisfied: idna<2.7,>=2.5 in /home/sb3923/.local/lib/python3.5/site-packages (from requests>=2.18.4->comet_ml)
+argument 1
+--cuda --experiment 2
+argument 2
+sb41

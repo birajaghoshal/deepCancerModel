@@ -54,7 +54,7 @@ ngpu = int(opt.ngpu)
 nc = int(opt.nc)
 imgSize = int(opt.imgSize)
 
-experiment = Experiment(api_key="qcf4MjyyOhZj7Xw7UuPvZluts", log_code=True)
+experiment = Experiment(api_key="ItWh5LI3t95Pag5fGrmBfHL8b", log_code=True)
 hyper_params = vars(opt)
 experiment.log_multiple_params(hyper_params)
 
@@ -68,7 +68,6 @@ if opt.experiment is None:
 os.system('mkdir experiments')
 os.system('mkdir experiments/{0}'.format(opt.experiment))
 os.system('mkdir experiments/{0}/images'.format(opt.experiment))
-
 opt.manualSeed = random.randint(1, 10000) # fix seed
 print("Random Seed: ", opt.manualSeed)
 random.seed(opt.manualSeed)
@@ -239,7 +238,6 @@ def get_tile_probability(tile_path):
 
     """
     Returns an array of probabilities for each class given a tile
-
     @param tile_path: Filepath to the tile
     @return: A ndarray of class probabilities for that tile
     """
@@ -276,17 +274,14 @@ def aggregate(file_list, method):
     """
     Given a list of files, return scores for each class according to the
     method and labels for those files.
-
     @param file_list: A list of file paths to do predictions on
     @param method: 'average' - returns the average probability score across
                                all tiles for that file
                    'max' - predicts each tile to be the class of the maximum
                            score, and returns the proportion of tiles for
                            each class
-
     @return: a ndarray of class probabilities for all files in the list
              a ndarray of the labels
-
     """
 
     model.eval()
@@ -392,6 +387,9 @@ best_AUC = 0.0
 
 print('Starting training')
 
+#correc=0
+#total=0
+
 for epoch in range(opt.niter+1):
     data_iter = iter(loaders['train'])
     i = 0
@@ -399,6 +397,9 @@ for epoch in range(opt.niter+1):
     if opt.decay_lr:
         adjust_learning_rate(optimizer, epoch)
         print("Epoch %d :lr = %f" % (epoch, optimizer.state_dict()['param_groups'][0]['lr']))    
+
+    #correc=0
+    # total=0
 
     while i < len(loaders['train']):
         model.train()
@@ -418,15 +419,50 @@ for epoch in range(opt.niter+1):
         target_label = Variable(label)
 
         train_loss = criterion(model(input_img), target_label)
-
+        #print(model(input_img)[0])
         # Zero gradients then backward pass
         optimizer.zero_grad()
         train_loss.backward()
+       
+        correc=0
+        total=0
 
         optimizer.step()
+        _, predicted = torch.max(model(input_img),1)
+        #print('predicted')
+        #print(predicted)
 
-        print('[%d/%d][%d/%d] Training Loss: %f'
-               % (epoch, opt.niter, i, len(loaders['train']), train_loss.data[0]))
+        #print(target_label)
+        total += target_label.size(0)
+      
+        #print(predicted == target_label)
+        #print(type(predicted))
+        #print(type(target_label)) 
+        #correc += (predicted == target_label).sum().item()
+        correc += (predicted == target_label).sum()
+
+        correc=correc.data[0]
+        #print('correc')
+        #print(correc)
+        acc= correc / total
+       
+        print('[%d/%d][%d/%d] Training Loss: %f Accuracy %f'
+               % (epoch, opt.niter, i, len(loaders['train']), train_loss.data[0],acc))
+        #get validation AUC every 500 step 
+        if i % 500 == 0:
+            val_predictions, val_labels = aggregate(data['valid'].filenames, method=opt.method)
+            print('validation scores:')
+            roc_auc = get_auc('experiments/{0}/images/{1}.jpg'.format(opt.experiment,epoch), val_predictions, val_labels, classes = range(num_classes))
+            for k, v in roc_auc.items(): 
+                if k in range(num_classes):
+                    k = classes[k] 
+                experiment.log_metric("{0} AUC".format(k), v)
+                print('%s AUC: %0.4f' % (k, v))
+
+
+
+
+
 
     # Get validation AUC once per epoch
     val_predictions, val_labels = aggregate(data['valid'].filenames, method=opt.method)

@@ -1,0 +1,12 @@
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Traceback (most recent call last):
+  File "train.py", line 446, in <module>
+    val_predictions, val_labels, classes = range(num_classes))
+  File "/scratch/jmw784/capstone/deep-cancer/utils/auc.py", line 109, in get_auc
+    labels = label_binarize(labels, classes = classes)
+  File "/share/apps/python3/3.5.3/intel/lib/python3.5/site-packages/sklearn/preprocessing/label.py", line 450, in label_binarize
+    y = check_array(y, accept_sparse='csr', ensure_2d=False, dtype=None)
+  File "/share/apps/python3/3.5.3/intel/lib/python3.5/site-packages/sklearn/utils/validation.py", line 416, in check_array
+    context))
+ValueError: Found array with 0 sample(s) (shape=(0,)) while a minimum of 1 is required.

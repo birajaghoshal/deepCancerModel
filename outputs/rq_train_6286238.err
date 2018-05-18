@@ -1,0 +1,4 @@
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+mkdir: cannot create directory ‘experiments’: File exists
+slurmstepd: error: *** JOB 6286238 ON gpu-24 CANCELLED AT 2018-05-18T11:23:48 ***

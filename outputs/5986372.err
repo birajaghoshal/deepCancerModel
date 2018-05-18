@@ -1,0 +1,9 @@
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+mkdir: cannot create directory ‘experiments’: File exists
+Traceback (most recent call last):
+  File "train.py", line 427, in <module>
+    correc += (predicted == target_label).sum().item()
+  File "/share/apps/pytorch/0.2.0_3/python3.5/lib/python3.5/site-packages/torch/autograd/variable.py", line 65, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'Variable' object has no attribute 'item'
